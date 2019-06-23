@@ -1,0 +1,15 @@
+{application, ewallet,
+ [{description, "Bitcoin Wallet in Erlang"},
+  {vsn, "0.1.0"},
+  {registered, []},
+  {mod, {ewallet_app, []}},
+  {applications,
+   [kernel,
+    stdlib
+   ]},
+  {env,[]},
+  {modules, []},
+
+  {licenses, ["Apache 2.0"]},
+  {links, []}
+ ]}.
