@@ -22,5 +22,19 @@
 
 -module(bip32).
 
--export([]).
+-export([point/1,
+	 ser_32/1,
+	 ser_256/1,
+	 ser_p/1]).
 
+point(P) ->
+    secp256k1:ec_pubkey_create(P).
+
+ser_32(I) ->
+    <<I:4/big-unsigned-integer-unit:8>>.
+
+ser_256(I) ->
+    <<I:32/big-integer-unit:8>>.
+
+ser_p(P) ->
+    secp256k1:ec_pubkey_serialize(P, compressed).

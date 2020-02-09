@@ -16,7 +16,8 @@
 
 -module(secp256k1).
 
--export([ec_pubkey_create/1]).
+-export([ec_pubkey_create/1,
+	 ec_pubkey_serialize/2]).
 
 -on_load(init/0).
 
@@ -24,6 +25,9 @@
 -define(LIBNAME, ewallet).
 
 ec_pubkey_create(_) ->
+    not_loaded(?LINE).
+
+ec_pubkey_serialize(_, _) ->
     not_loaded(?LINE).
 
 init() ->
